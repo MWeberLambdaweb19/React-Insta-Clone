@@ -1,0 +1,29 @@
+.Search {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    border-bottom: 2px solid lightgray;
+    align-items: center;
+    .left{
+        display: flex;
+        align-items: center;
+        .logo {
+            padding-top: 5px;
+            margin-left: 10px;
+            padding-left: 10px;
+            border-left: 1px solid black;
+            width: 200px;
+            height: 30px;
+        }
+    }
+    .center{
+        form{
+            input{
+                background:ghostwhite;
+            }
+        }
+    }
+}
