@@ -15,12 +15,13 @@ export default function SearchBar(){
             <div className="center">    
                 <form>
                     <input type="text" placeholder="Search">
+                    
                     </input>
                 </form>
             </div>
 
             <div className="right">
-                <i className="far fa-compass"></i>
+                
                 <i className="far fa-heart"></i>
                 <i className="far fa-user"></i>
             </div>

@@ -1,0 +1,32 @@
+.wholepost {
+    width: 640px;
+    margin: 0 auto;
+    border: 1px solid lightgrey;
+    margin-top: 10px;
+    text-align: left;
+        .usercontent{
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            .userimage {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+            }
+        }
+    .likes {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+    }
+    .commenter {
+        width: 90%;
+        margin-left: 10px;
+        border-bottom: 1px solid lightgrey;
+    }
+}
