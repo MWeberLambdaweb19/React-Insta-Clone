@@ -2,9 +2,9 @@ import React from 'react'
 import CommentSection from '../CommentSection/CommentSection.js'
 import AddComment from '../CommentSection/AddComment.js'
 import './PostContainer.scss'
+import PropTypes from 'prop-types';
 
-export default function PostContainer(props){
-    console.log(props)
+function PostContainer(props){
     return(
         <div>
             {props.webstapost.map(websta => (
@@ -31,3 +31,14 @@ export default function PostContainer(props){
         </div>
     )
 }
+PostContainer.propTypes = {
+    webstapost: PropTypes.arrayOf(
+        PropTypes.shape({
+            username: PropTypes.string.isRequired,
+            thumbnailUrl: PropTypes.string.isRequired,
+            imageUrl: PropTypes.string.isRequired,
+        })
+    )
+}
+
+export default PostContainer;

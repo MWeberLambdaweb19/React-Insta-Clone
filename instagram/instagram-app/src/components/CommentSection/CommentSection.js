@@ -1,8 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-
-export default function CommentSection(props){
-    console.log(props)
+function CommentSection(props){
     return(
         <div>
             {props.commentProps.map((commenting, i) => (
@@ -14,3 +13,13 @@ export default function CommentSection(props){
         </div>
     )
 }
+CommentSection.propTypes = {
+    commentProps: PropTypes.arrayOf(
+        PropTypes.shape({
+           username: PropTypes.string.isRequired,
+           text: PropTypes.string.isRequired,
+        })
+    )
+}
+
+export default CommentSection;
