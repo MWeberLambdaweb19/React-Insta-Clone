@@ -1,0 +1,19 @@
+.comment{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    i {
+        margin-top: 5px;
+    }
+    form {
+        width: 90%;
+        input {
+            width: 100%;
+            border: none;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+    }
+}
