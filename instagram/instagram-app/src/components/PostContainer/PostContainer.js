@@ -1,19 +1,19 @@
 import React from 'react'
 import CommentSection from '../CommentSection/CommentSection.js'
-import AddComment from '../CommentSection/AddComment.js'
 import './PostContainer.scss'
 import PropTypes from 'prop-types';
 
-function PostContainer(props){
+class PostContainer extends React.Component{
+    render(){
     return(
         <div>
-            {props.webstapost.map(websta => (
+            {this.props.webstapost.map(websta => (
                 <div className="wholepost" key={websta.timestamp}>
                     <div className="usercontent">
                         <img className="userimage" src={websta.thumbnailUrl} alt={websta.username} ></img>
                         <p><strong>{websta.username}</strong></p>
                     </div>
-                    <img src={websta.imageUrl} alt={websta.imageUrl}></img>
+                    <img src={websta.imageUrl} alt={websta.imageUrl}/>
                     <div className="likes">
                         <div>
                             <i className="far fa-comment fa-lg "></i>
@@ -25,11 +25,11 @@ function PostContainer(props){
                         <CommentSection commentProps={websta.comments}/>
                         <p>{websta.timestamp}</p>
                     </div>
-                    <AddComment />
                 </div>
             ))}
         </div>
     )
+    }
 }
 PostContainer.propTypes = {
     webstapost: PropTypes.arrayOf(
