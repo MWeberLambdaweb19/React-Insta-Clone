@@ -10,6 +10,7 @@ class App extends React.Component{
     super();
     this.state= {
       data: [],
+      filteredData: []
     };
   }
   componentDidMount(){
@@ -21,6 +22,16 @@ class App extends React.Component{
   componentDidUpdate(){
     console.log("Updating!")
   }
+
+  searchPostsHandler = event => {
+    const dataset = this.state.data.filter(post => {
+      if (post.username.include(event.target.value)) {
+        return post;
+      }
+    });
+    this.setState({filteredData: dataset})
+  }
+
   render(){
     console.log(this.state.data, "Bendering!")
     return (

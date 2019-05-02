@@ -2,7 +2,7 @@ import React from 'react';
 import webstagram from './webstagram.png';
 import './searchbar.scss';
 
-export default function SearchBar(){
+export default function SearchBar(props){
     return(
     <div>    
         <div className="Search">
@@ -14,8 +14,7 @@ export default function SearchBar(){
             
             <div className="center">    
                 <form>
-                    <input type="text" placeholder="Search">
-                    
+                    <input type="text" placeholder="Search" onKeyDown={props.searchPosts}> 
                     </input>
                 </form>
             </div>
