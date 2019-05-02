@@ -15,7 +15,6 @@ class CommentSection extends React.Component{
 
     eventHandleSubmit(event){
         event.preventDefault();
-        console.log("Submit:", this.state.input)
         const newComment = {text: this.state.input, username: "MWeberWeb19"}
         const comments = this.state.comments.slice();
         comments.push(newComment);
@@ -23,7 +22,6 @@ class CommentSection extends React.Component{
     }
 
     eventHandleInput(event){
-        console.log("Change:", event.target.value)
         this.setState({[event.target.name]: event.target.value})
     }
 
