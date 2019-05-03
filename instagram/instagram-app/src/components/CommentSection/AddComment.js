@@ -1,5 +1,6 @@
 import React from 'react';
 import './commenting.scss'
+import styled from 'styled-components';
 
 export default function AddComment(props){
     return(

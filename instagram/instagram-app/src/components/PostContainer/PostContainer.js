@@ -1,12 +1,18 @@
 import React from 'react'
 import CommentSection from '../CommentSection/CommentSection.js'
 import './PostContainer.scss'
+import LikesButton from './LikesButton.js';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const PostDiv = styled.div`
+    background: white;
+`
 
 class PostContainer extends React.Component{
     render(){
     return(
-        <div>
+        <PostDiv>
             {this.props.webstapost.map(websta => (
                 <div className="wholepost" key={websta.timestamp}>
                     <div className="usercontent">
@@ -15,11 +21,7 @@ class PostContainer extends React.Component{
                     </div>
                     <img src={websta.imageUrl} alt={websta.imageUrl}/>
                     <div className="likes">
-                        <div>
-                            <i className="far fa-comment fa-lg "></i>
-                            <i className="far fa-heart fa-lg"></i>
-                        </div>
-                        <strong>{websta.likes} likes</strong>
+                        <LikesButton likesProps={websta.likes}/>
                     </div>
                     <div className="commenter">
                         <CommentSection commentProps={websta.comments}/>
@@ -27,7 +29,8 @@ class PostContainer extends React.Component{
                     </div>
                 </div>
             ))}
-        </div>
+        <button onClick={this.handleLogout}>Log out</button>
+        </PostDiv>
     )
     }
 }
